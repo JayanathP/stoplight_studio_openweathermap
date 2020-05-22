@@ -28,6 +28,8 @@ paths:
               schema:
                 type: object
                 properties:
+                  coord:
+                    type: object
                   '':
                     type: string
             application/xml:
