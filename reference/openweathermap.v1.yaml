@@ -65,8 +65,47 @@ paths:
                   clouds:
                     type: object
                     properties:
-                      '':
-                        type: string
+                      all:
+                        type: number
+                  wind:
+                    type: object
+                    properties:
+                      spped:
+                        type: number
+                      deg:
+                        type: number
+                  visibility:
+                    type: number
+                  main:
+                    type: object
+                    properties:
+                      temp:
+                        type: number
+                      feels_like:
+                        type: number
+                      temp_min:
+                        type: number
+                      temp_max:
+                        type: number
+                      preseure:
+                        type: number
+                      humidity:
+                        type: number
+                  weather:
+                    type: array
+                    items:
+                      type: object
+                      properties:
+                        id:
+                          type: number
+                        main:
+                          type: string
+                        description:
+                          type: string
+                        icon:
+                          type: string
+              examples:
+                example: {}
             application/xml:
               schema:
                 type: object
