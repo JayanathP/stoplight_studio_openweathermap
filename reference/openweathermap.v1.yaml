@@ -40,28 +40,8 @@ paths:
                         description: 'City geo location, longitude'
                         example: 145.77
                   cod:
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  coord:
-                    type: object
-                    properties:
-                      lat:
-                        type: number
-                        example: -16.92
-                        description: 'City geo location, latitude'
-                      long:
-                        type: number
-                        description: 'City geo location, longitude'
-                        example: 145.77
-                  cod:
                     type: number
-                    description: Internal parameter
+                    description: 'Internal parameter'
                     example: 200
                   name:
                     type: string
