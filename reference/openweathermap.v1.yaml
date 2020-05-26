@@ -7,7 +7,7 @@ info:
     name: Support
     url: 'https://openweathermap.org/api'
     email: some_email@gmail.com
-  termsOfService: 'URL: https://openweathermap.org/terms'
+  termsOfService: 'https://openweathermap.org/terms'
   license:
     url: 'https://openweathermap.org/price'
     name: ' CC Attribution-ShareAlike 4.0 (CC BY-SA 4.0)'
@@ -35,7 +35,7 @@ paths:
                         type: number
                         example: -16.92
                         description: 'City geo location, latitude'
-                      long:
+                      lon:
                         type: number
                         description: 'City geo location, longitude'
                         example: 145.77
@@ -138,12 +138,20 @@ paths:
                       properties:
                         id:
                           type: number
+                          example: 803
+                          description: Weather condition id
                         main:
                           type: string
+                          example: clouds
+                          description: 'Group of weather parameters (Rain, Snow, Extreme etc.)'
                         description:
                           type: string
+                          example: broken clouds
+                          description: Weather condition within the group
                         icon:
                           type: string
+                          example: 04n
+                          description: Weather icon id
               examples: {}
             application/xml:
               schema:
@@ -151,7 +159,6 @@ paths:
                 properties:
                   coord:
                     type:
-                      - string
                       - object
                     properties:
                       lon:
@@ -246,12 +253,6 @@ paths:
           in: query
           name: lat
           description: '**Latitude**. *Example: 35*. The latitude coordinate of the location of your interest. Must use with `lon`.'
-        - schema:
-            type: string
-            example: '139'
-          in: query
-          name: lon
-          description: '**Longitude**. *Example: 139*. Longitude coordinate of the location of your interest.'
         - $ref: '#/components/parameters/lon'
         - schema:
             type: string
@@ -267,3 +268,10 @@ components:
       name: appid
       type: apiKey
       in: query
+  parameters:
+    lon:
+      name: lon
+      in: query
+      description: '**Longitude**. *Example: 139*. Longitude coordinate of the location of your interest.'
+      schema:
+        type: string
